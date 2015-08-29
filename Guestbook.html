@@ -1,0 +1,18 @@
+<div>
+	<h1>My Cool Guestbook</h1>
+	<label>Add New Guest</label>
+	<input type="text" #new-guest/>
+	<button (click)="addToGuestbook(newGuest.value)">
+		Add to Guestbook
+	</button>
+	<ul>
+		<li *ng-for="#guest of guests"><span (click)="removeGuest(guest)">[x]</span>  {{guest}}</li>
+  </ul>
+
+
+	<!-- here's the new component -->
+  <toggle-message
+    message="{{currentGuestCount()}}"
+    button-text="Guest Count">
+  </toggle-message>
+</div>
